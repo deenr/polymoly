@@ -1,8 +1,24 @@
-<div class="card">
-  <h1>Polymoly</h1>
-  <div class="illustration">
-    <div class="eclipse"></div>
-    <img src="../../assets/star.svg" alt="Star" />
-    <img src="../../assets/poly-man.svg" alt="Polyman" />
-  </div>
+<div class="card" [ngClass]="cardFlipped ? 'card-flipped' : 'card-unflipped'">
+  <ng-container *ngIf="!cardFlipped">
+    <div class="title-text">
+      <svg>
+        <path
+          id="curve"
+          d="m 30 56 C 30 56 80 36 152.5 36 C 225 36 265 56 265 56"
+        />
+        <text>
+          <textPath xlink:href="#curve">Polymoly</textPath>
+        </text>
+      </svg>
+    </div>
+    <div class="illustration">
+      <div class="eclipse"></div>
+      <img class="star" src="../../assets/star.svg" alt="Star" />
+      <img class="polyman" src="../../assets/poly-man.svg" alt="Polyman" />
+    </div>
+  </ng-container>
+  <ng-container *ngIf="cardFlipped">
+    <h1>You are lucky</h1>
+    <p>Move to vacation <br />and do your holiday dance!</p>
+  </ng-container>
 </div>

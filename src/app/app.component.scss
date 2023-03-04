@@ -1,5 +1,21 @@
 @import url("https://fonts.cdnfonts.com/css/furore");
 
-h1 {
-  font-family: "Furore", sans-serif;
+body {
+  background-color: #fdef6d;
+}
+
+.homepage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  h1 {
+    font-family: "Furore";
+    color: #501e9d;
+  }
+
+  p {
+    font-family: Andale Mono, AndaleMono, monospace;
+  }
 }

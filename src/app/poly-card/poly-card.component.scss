@@ -1,25 +1,100 @@
-h1 {
-  font-family: "Furore";
-  color: #fdef6d;
-}
-
 .card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   width: 620px;
   height: 360px;
-  background-color: #dc4ddd;
   border-radius: 20px;
+  box-shadow: 6px 6px 50px #935bdd;
+
+  background-position: center;
+  background-size: cover;
+
+  transition-duration: 300ms;
+  transition-property: transform, box-shadow;
+  transition-timing-function: ease-out;
+  transform: rotate3d(0);
+}
+
+.card-flipped {
+  text-align: center;
+  background-image: linear-gradient(
+      rgba(145, 88, 221, 0.97),
+      rgba(145, 88, 221, 0.97)
+    ),
+    url("../../assets/checkers.svg");
+
+  h1 {
+    font-size: 36px;
+    font-family: "Furore";
+    color: #fdef6d;
+    -webkit-text-stroke: 1px #e8ec3a;
+    text-shadow: 6px 6px 25px #fdef6e;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 24px;
+    font-family: "Furore";
+    color: #fdef6d;
+  }
+}
+
+.card-unflipped {
+  background-image: linear-gradient(
+      rgba(220, 77, 221, 0.97),
+      rgba(220, 77, 221, 0.97)
+    ),
+    url("../../assets/checkers.svg");
+}
+
+.title-text {
+  width: 255px;
+  height: 65px;
+  margin-top: -35px;
+  margin-right: 35px;
+
+  text {
+    font-family: "Furore";
+    fill: #fdef6d;
+    font-size: 36px;
+    letter-spacing: 6px;
+    text-shadow: 6px 6px 25px #fdef6e;
+    border: 2px;
+    stroke: #e8ec3a;
+    stroke-width: 1px;
+  }
+
+  path {
+    fill: transparent;
+  }
 }
 
 .illustration {
+  display: grid;
   height: 50%;
   width: 50%;
 }
 
 .eclipse {
+  grid-area: 1/1;
   width: 100%;
   height: 100%;
   background-color: #50bedc;
   border-radius: 50%;
   outline: 2px solid #dc4ddd;
   outline-offset: -8px;
+}
+
+.star {
+  grid-area: 1/1;
+  margin: auto;
+  filter: drop-shadow(6px 6px 25px #e8ec3a);
+}
+
+.polyman {
+  z-index: 1;
+  grid-area: 1/1;
+  margin: auto;
 }
