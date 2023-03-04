@@ -1,6 +1,12 @@
-<div class="card" [ngClass]="cardFlipped ? 'card-flipped' : 'card-unflipped'">
+<div
+  class="card"
+  [ngClass]="cardFlipped ? 'card-flipped' : 'card-unflipped'"
+  [ngStyle]="{
+    transform: 'rotateY(' + rotateX + 'deg) rotateX(' + rotateY + 'deg)'
+  }"
+>
   <ng-container *ngIf="!cardFlipped">
-    <div class="title-text">
+    <div #polymolyTitle class="title-text">
       <svg>
         <path
           id="curve"
@@ -12,13 +18,23 @@
       </svg>
     </div>
     <div class="illustration">
-      <div class="eclipse"></div>
-      <img class="star" src="../../assets/star.svg" alt="Star" />
-      <img class="polyman" src="../../assets/poly-man.svg" alt="Polyman" />
+      <div #eclipseIllustration class="eclipse"></div>
+      <img
+        #starIllustration
+        class="star"
+        src="../../assets/star.svg"
+        alt="Star"
+      />
+      <img
+        #polymanIllustration
+        class="polyman"
+        src="../../assets/poly-man.svg"
+        alt="Polyman"
+      />
     </div>
   </ng-container>
   <ng-container *ngIf="cardFlipped">
-    <h1>You are lucky</h1>
+    <h1 #cardTitle>You are lucky</h1>
     <p>Move to vacation <br />and do your holiday dance!</p>
   </ng-container>
 </div>

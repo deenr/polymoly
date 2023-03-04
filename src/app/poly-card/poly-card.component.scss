@@ -11,10 +11,7 @@
   background-position: center;
   background-size: cover;
 
-  transition-duration: 300ms;
-  transition-property: transform, box-shadow;
-  transition-timing-function: ease-out;
-  transform: rotate3d(0);
+  transform-style: preserve-3d;
 }
 
 .card-flipped {
@@ -32,12 +29,16 @@
     -webkit-text-stroke: 1px #e8ec3a;
     text-shadow: 6px 6px 25px #fdef6e;
     margin-bottom: 10px;
+
+    transform: translateZ(100px);
   }
 
   p {
     font-size: 24px;
     font-family: "Furore";
     color: #fdef6d;
+
+    transform: translateZ(50px);
   }
 }
 
@@ -54,6 +55,8 @@
   height: 65px;
   margin-top: -35px;
   margin-right: 35px;
+
+  transform: translateZ(50px);
 
   text {
     font-family: "Furore";
@@ -72,6 +75,7 @@
 }
 
 .illustration {
+  transform-style: preserve-3d;
   display: grid;
   height: 50%;
   width: 50%;
@@ -85,16 +89,19 @@
   border-radius: 50%;
   outline: 2px solid #dc4ddd;
   outline-offset: -8px;
+  transform: translateZ(25px);
 }
 
 .star {
   grid-area: 1/1;
   margin: auto;
   filter: drop-shadow(6px 6px 25px #e8ec3a);
+  transform: translateZ(50px);
 }
 
 .polyman {
   z-index: 1;
   grid-area: 1/1;
   margin: auto;
+  transform: translateZ(75px);
 }
