@@ -1,10 +1,6 @@
 <article #document class="homepage">
-  <app-poly-card
-    [cardFlipped]="cardFlipped"
-    [rotateX]="rotateX"
-    [rotateY]="rotateY"
-  ></app-poly-card>
+  <app-poly-card [isCardFlipped]="isCardFlipped"></app-poly-card>
   <h1>Let's dance!</h1>
   <p>FLIP THE CARD</p>
-  <button mat-flat-button (click)="flipCard()">Play</button>
+  <button mat-stroked-button (click)="flipCard()">Play</button>
 </article>

@@ -1,26 +1,48 @@
 .card {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.card-transition {
+  transition: transform 1s;
+}
+
+.card-content.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card-content {
+  width: 620px;
+  height: 360px;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  display: grid;
+}
+
+.card-face {
+  grid-area: 1/1;
+  height: 100%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 620px;
-  height: 360px;
   border-radius: 20px;
   box-shadow: 6px 6px 50px #935bdd;
-
   background-position: center;
   background-size: cover;
-
   transform-style: preserve-3d;
+  backface-visibility: hidden;
 }
 
-.card-flipped {
+.card-back {
   text-align: center;
   background-image: linear-gradient(
       rgba(145, 88, 221, 0.97),
       rgba(145, 88, 221, 0.97)
     ),
     url("../../assets/checkers.svg");
+  transform: rotateY(180deg);
 
   h1 {
     font-size: 36px;
@@ -30,7 +52,7 @@
     text-shadow: 6px 6px 25px #fdef6e;
     margin-bottom: 10px;
 
-    transform: translateZ(100px);
+    transform: translateZ(50px);
   }
 
   p {
@@ -38,11 +60,11 @@
     font-family: "Furore";
     color: #fdef6d;
 
-    transform: translateZ(50px);
+    transform: translateZ(25px);
   }
 }
 
-.card-unflipped {
+.card-front {
   background-image: linear-gradient(
       rgba(220, 77, 221, 0.97),
       rgba(220, 77, 221, 0.97)

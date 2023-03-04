@@ -1,40 +1,42 @@
 <div
   class="card"
-  [ngClass]="cardFlipped ? 'card-flipped' : 'card-unflipped'"
+  [ngClass]="{ 'card-transition': mouseNotOnCard }"
   [ngStyle]="{
     transform: 'rotateY(' + rotateX + 'deg) rotateX(' + rotateY + 'deg)'
   }"
 >
-  <ng-container *ngIf="!cardFlipped">
-    <div #polymolyTitle class="title-text">
-      <svg>
-        <path
-          id="curve"
-          d="m 30 56 C 30 56 80 36 152.5 36 C 225 36 265 56 265 56"
+  <div #card class="card-content">
+    <div class="card-face card-front">
+      <div #polymolyTitle class="title-text">
+        <svg>
+          <path
+            id="curve"
+            d="m 30 56 C 30 56 80 36 152.5 36 C 225 36 265 56 265 56"
+          />
+          <text>
+            <textPath xlink:href="#curve">Polymoly</textPath>
+          </text>
+        </svg>
+      </div>
+      <div class="illustration">
+        <div #eclipseIllustration class="eclipse"></div>
+        <img
+          #starIllustration
+          class="star"
+          src="../../assets/star.svg"
+          alt="Star"
         />
-        <text>
-          <textPath xlink:href="#curve">Polymoly</textPath>
-        </text>
-      </svg>
+        <img
+          #polymanIllustration
+          class="polyman"
+          src="../../assets/poly-man.svg"
+          alt="Polyman"
+        />
+      </div>
     </div>
-    <div class="illustration">
-      <div #eclipseIllustration class="eclipse"></div>
-      <img
-        #starIllustration
-        class="star"
-        src="../../assets/star.svg"
-        alt="Star"
-      />
-      <img
-        #polymanIllustration
-        class="polyman"
-        src="../../assets/poly-man.svg"
-        alt="Polyman"
-      />
+    <div class="card-face card-back">
+      <h1 #cardTitle>You are lucky</h1>
+      <p>Move to vacation <br />and do your holiday dance!</p>
     </div>
-  </ng-container>
-  <ng-container *ngIf="cardFlipped">
-    <h1 #cardTitle>You are lucky</h1>
-    <p>Move to vacation <br />and do your holiday dance!</p>
-  </ng-container>
+  </div>
 </div>
