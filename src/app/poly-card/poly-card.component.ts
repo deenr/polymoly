@@ -21,6 +21,7 @@ export class PolyCardComponent {
 
   @HostListener('mousemove', ['$event'])
   onMouseMove(event: MouseEvent) {
+    this.mouseNotOnCard = false;
     const { left, top } = this.card.nativeElement.getBoundingClientRect();
     this.rotateX =
       -(this.card.nativeElement.offsetWidth / 2 - (event.pageX - left)) / 20;

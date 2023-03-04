@@ -1,6 +1,9 @@
-<article #document class="homepage">
-  <app-poly-card [isCardFlipped]="isCardFlipped"></app-poly-card>
+<article class="homepage">
+  <div class="card-container">
+    <app-poly-card [isCardFlipped]="isCardFlipped"></app-poly-card>
+    <img class="globe" src="../assets/globe.png" alt="" />
+  </div>
   <h1>Let's dance!</h1>
   <p>FLIP THE CARD</p>
-  <button mat-stroked-button (click)="flipCard()">Play</button>
+  <button mat-flat-button (click)="flipCard()">Play</button>
 </article>

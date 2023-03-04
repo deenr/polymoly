@@ -13,11 +13,36 @@ body {
   height: 100%;
 
   h1 {
-    font-family: "Furore";
+    margin-top: 100px;
+    margin-bottom: 0;
     color: #501e9d;
   }
 
   p {
     font-family: Andale Mono, AndaleMono, monospace;
+  }
+}
+
+.card-container {
+  display: grid;
+  align-items: center;
+
+  app-poly-card {
+    z-index: 1;
+    grid-area: 1/1;
+  }
+
+  .globe {
+    grid-area: 1/1;
+    margin: auto;
+    animation: rotation 10s infinite linear;
+  }
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg) scale(1.25);
+  }
+  to {
+    transform: rotate(359deg) scale(1.25);
   }
 }
