@@ -1,0 +1,8 @@
+<button type="button" class="button" [disabled]="inProgress">
+  <ng-template #buttonText>
+    <span>{{ getButtonText() }}</span>
+  </ng-template>
+  <div *ngIf="inProgress; else buttonText">
+    <div class="spinner"></div>
+  </div>
+</button>

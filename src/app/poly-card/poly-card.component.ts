@@ -20,6 +20,7 @@ export class PolyCardComponent implements OnInit, OnDestroy {
   @ViewChild('card') card: ElementRef;
   @Input() requestCard: Observable<void>;
   @Output() isCardLoadingChange = new EventEmitter<boolean>();
+  @Output() isCardFlippedChange = new EventEmitter<boolean>();
 
   requestCardSubscription: Subscription;
   isLoading = false;
@@ -50,10 +51,13 @@ export class PolyCardComponent implements OnInit, OnDestroy {
       this.isCardLoadingChange.emit(this.isLoading);
       if (this.isCardFlipped()) {
         this.card.nativeElement.classList.toggle('is-flipped');
+        this.isCardFlippedChange.emit(false);
       }
 
       setTimeout(() => {
         this.card.nativeElement.classList.toggle('is-flipped');
+        this.isCardFlippedChange.emit(true);
+
         setTimeout(() => {
           this.isLoading = false;
           this.isCardLoadingChange.emit(this.isLoading);

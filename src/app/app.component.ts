@@ -16,9 +16,9 @@ import { Observable, Subject } from 'rxjs';
 export class AppComponent {
   requestNewCard = new Subject<void>();
   isCardLoading = false;
+  isCardFlipped = false;
 
   requestCard(): void {
-    console.log('hi');
     this.requestNewCard.next();
   }
 
@@ -28,5 +28,13 @@ export class AppComponent {
 
   isCardLoadingChange(isCardLoading: boolean): void {
     this.isCardLoading = isCardLoading;
+  }
+
+  isCardFlippedChange(isCardFlipped: boolean): void {
+    this.isCardFlipped = isCardFlipped;
+  }
+
+  getButtonText(): string {
+    return this.isCardFlipped ? 'Play again' : 'Play';
   }
 }

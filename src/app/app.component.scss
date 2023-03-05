@@ -41,25 +41,9 @@ body {
 
 @keyframes rotation {
   from {
-    transform: rotate(0deg) scale(1.25);
+    transform: rotate(0turn) scale(1.25);
   }
   to {
-    transform: rotate(359deg) scale(1.25);
-  }
-}
-
-.play-button {
-  cursor: pointer;
-  background-color: #d54bd6;
-  font-size: 24px;
-  font-family: "Furore";
-  color: #501e9d;
-  border: 0;
-  padding: 10px 20px;
-
-  &:disabled,
-  &[disabled] {
-    background-color: #d64bd67d;
-    color: #511e9d68;
+    transform: rotate(1turn) scale(1.25);
   }
 }
