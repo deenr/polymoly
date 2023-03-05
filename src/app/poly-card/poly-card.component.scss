@@ -62,7 +62,7 @@
 
   h1 {
     font-size: 36px;
-    font-family: "Furore";
+    font-family: "Furore", sans-serif;
     color: #fdef6d;
     -webkit-text-stroke: 1px #e8ec3a;
     text-shadow: 6px 6px 25px #fdef6e;
@@ -74,8 +74,9 @@
 
   p {
     font-size: 24px;
-    font-family: "Furore";
+    font-family: "Furore", sans-serif;
     color: #fdef6d;
+    max-width: 400px;
 
     transform: translateZ(25px);
   }
@@ -98,7 +99,7 @@
   transform: translateZ(50px);
 
   text {
-    font-family: "Furore";
+    font-family: "Furore", sans-serif;
     fill: #fdef6d;
     font-size: 36px;
     letter-spacing: 6px;

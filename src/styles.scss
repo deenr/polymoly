@@ -1,9 +1,9 @@
 @use "@angular/material" as mat;
 @font-face {
-  font-family: "Furore";
+  font-family: "Furore", sans-serif;
   src: url("assets/Furore.otf");
 }
 
 body {
-  font-family: "Furore";
+  font-family: "Furore", sans-serif;
 }

@@ -22,6 +22,21 @@ export class PolyCardComponent implements OnInit, OnDestroy {
   @Output() isCardLoadingChange = new EventEmitter<boolean>();
   @Output() isCardFlippedChange = new EventEmitter<boolean>();
 
+  cardTitles = [
+    'You are lucky',
+    'You are unlucky',
+    'Hell yeah!',
+    'Can I do it?',
+  ];
+  cardDescriptions = [
+    'Move to vacation and do your holiday dance!',
+    'Go to jail and drop the soap!',
+    'You decided to move to New York and throw a big house party. Give the bank $300',
+    'Do a handstand and try to take a shot',
+  ];
+  cardTitle: string;
+  cardDescription: string;
+
   requestCardSubscription: Subscription;
   isLoading = false;
   mouseNotOnCard = false;
@@ -55,6 +70,10 @@ export class PolyCardComponent implements OnInit, OnDestroy {
       }
 
       setTimeout(() => {
+        const randomIndex = Math.floor(Math.random() * this.cardTitles.length);
+        this.cardTitle = this.cardTitles[randomIndex];
+        this.cardDescription = this.cardDescriptions[randomIndex];
+
         this.card.nativeElement.classList.toggle('is-flipped');
         this.isCardFlippedChange.emit(true);
 
