@@ -38,6 +38,7 @@ body {
     animation: rotation 10s infinite linear;
   }
 }
+
 @keyframes rotation {
   from {
     transform: rotate(0deg) scale(1.25);
@@ -45,4 +46,14 @@ body {
   to {
     transform: rotate(359deg) scale(1.25);
   }
+}
+
+.play-button {
+  cursor: pointer;
+  background-color: #d54bd6;
+  font-size: 24px;
+  font-family: "Furore";
+  color: #501e9d;
+  border: 0;
+  padding: 10px 20px;
 }

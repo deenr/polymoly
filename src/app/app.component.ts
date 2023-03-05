@@ -5,6 +5,7 @@ import {
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -13,9 +14,13 @@ import {
   encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent {
-  isCardFlipped = false;
+  requestNewCard = new Subject<void>();
 
-  flipCard(): void {
-    this.isCardFlipped = !this.isCardFlipped;
+  requestCard(): void {
+    this.requestNewCard.next();
+  }
+
+  getRequestCard(): Observable<void> {
+    return this.requestNewCard.asObservable();
   }
 }

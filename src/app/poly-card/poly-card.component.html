@@ -5,9 +5,9 @@
     transform: 'rotateY(' + rotateX + 'deg) rotateX(' + rotateY + 'deg)'
   }"
 >
-  <div #card class="card-content">
+  <div #card class="card-content" [ngClass]="{ 'is-loading': isLoading }">
     <div class="card-face card-front">
-      <div #polymolyTitle class="title-text">
+      <div class="title-text">
         <svg>
           <path
             id="curve"
@@ -19,23 +19,13 @@
         </svg>
       </div>
       <div class="illustration">
-        <div #eclipseIllustration class="eclipse"></div>
-        <img
-          #starIllustration
-          class="star"
-          src="../../assets/star.svg"
-          alt="Star"
-        />
-        <img
-          #polymanIllustration
-          class="polyman"
-          src="../../assets/poly-man.svg"
-          alt="Polyman"
-        />
+        <div class="eclipse"></div>
+        <img class="star" src="../../assets/star.svg" alt="Star" />
+        <img class="polyman" src="../../assets/poly-man.svg" alt="Polyman" />
       </div>
     </div>
     <div class="card-face card-back">
-      <h1 #cardTitle>You are lucky</h1>
+      <h1>You are lucky</h1>
       <p>Move to vacation <br />and do your holiday dance!</p>
     </div>
   </div>

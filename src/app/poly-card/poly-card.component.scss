@@ -1,6 +1,6 @@
 .card {
   transform-style: preserve-3d;
-  perspective: 1000px;
+  perspective: 2000px;
 }
 
 .card-transition {
@@ -8,7 +8,22 @@
 }
 
 .card-content.is-flipped {
-  transform: rotateY(180deg);
+  transform: translateX(100%) rotateY(-180deg);
+}
+
+.card-content.is-loading {
+  .star {
+    animation: identifier 2s infinite ease-in-out;
+
+    @keyframes identifier {
+      from {
+        transform: rotate(0deg) translateZ(50px);
+      }
+      to {
+        transform: rotate(359deg) translateZ(50px);
+      }
+    }
+  }
 }
 
 .card-content {
@@ -16,6 +31,7 @@
   height: 360px;
   transform-style: preserve-3d;
   transition: transform 1s;
+  transform-origin: center left;
   display: grid;
 }
 
