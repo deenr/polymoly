@@ -1,10 +1,12 @@
 import {
   Component,
   ElementRef,
+  EventEmitter,
   HostListener,
   Input,
   OnDestroy,
   OnInit,
+  Output,
   ViewChild,
 } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
@@ -15,8 +17,9 @@ import { Observable, Subscription } from 'rxjs';
   styleUrls: ['./poly-card.component.scss'],
 })
 export class PolyCardComponent implements OnInit, OnDestroy {
-  @Input() requestCard: Observable<void>;
   @ViewChild('card') card: ElementRef;
+  @Input() requestCard: Observable<void>;
+  @Output() isCardLoadingChange = new EventEmitter<boolean>();
 
   requestCardSubscription: Subscription;
   isLoading = false;
@@ -44,6 +47,7 @@ export class PolyCardComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.requestCardSubscription = this.requestCard.subscribe(() => {
       this.isLoading = true;
+      this.isCardLoadingChange.emit(this.isLoading);
       if (this.isCardFlipped()) {
         this.card.nativeElement.classList.toggle('is-flipped');
       }
@@ -52,6 +56,7 @@ export class PolyCardComponent implements OnInit, OnDestroy {
         this.card.nativeElement.classList.toggle('is-flipped');
         setTimeout(() => {
           this.isLoading = false;
+          this.isCardLoadingChange.emit(this.isLoading);
         }, 1000);
       }, 3000);
     });

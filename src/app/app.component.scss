@@ -56,4 +56,10 @@ body {
   color: #501e9d;
   border: 0;
   padding: 10px 20px;
+
+  &:disabled,
+  &[disabled] {
+    background-color: #d64bd67d;
+    color: #511e9d68;
+  }
 }
