@@ -43,9 +43,11 @@ export class PolyCardComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.requestCardSubscription = this.requestCard.subscribe(() => {
-      if (!this.isCardFlipped()) {
-        this.isLoading = true;
+      this.isLoading = true;
+      if (this.isCardFlipped()) {
+        this.card.nativeElement.classList.toggle('is-flipped');
       }
+
       setTimeout(() => {
         this.card.nativeElement.classList.toggle('is-flipped');
         setTimeout(() => {
