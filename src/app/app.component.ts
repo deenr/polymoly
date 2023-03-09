@@ -14,27 +14,7 @@ import { Observable, Subject } from 'rxjs';
   encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent {
-  requestNewCard = new Subject<void>();
-  isCardLoading = false;
-  isCardFlipped = false;
-
-  requestCard(): void {
-    this.requestNewCard.next();
-  }
-
-  getRequestCard(): Observable<void> {
-    return this.requestNewCard.asObservable();
-  }
-
-  isCardLoadingChange(isCardLoading: boolean): void {
-    this.isCardLoading = isCardLoading;
-  }
-
-  isCardFlippedChange(isCardFlipped: boolean): void {
-    this.isCardFlipped = isCardFlipped;
-  }
-
-  getButtonText(): string {
-    return this.isCardFlipped ? 'Play again' : 'Play';
+  public toAbout() {
+    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
   }
 }

@@ -1,0 +1,17 @@
+<article class="homepage">
+  <div class="card-container">
+    <app-poly-card
+      [requestCard]="getRequestCard()"
+      (isCardLoadingChange)="isCardLoadingChange($event)"
+      (isCardFlippedChange)="isCardFlippedChange($event)"
+    ></app-poly-card>
+    <img class="globe" src="../assets/globe.png" alt="" />
+  </div>
+  <h1>Let's dance!</h1>
+  <p>FLIP THE CARD</p>
+  <app-progress-button
+    [inProgress]="isCardLoading"
+    [buttonText]="getButtonText()"
+    (click)="requestCard()"
+  ></app-progress-button>
+</article>
