@@ -8,7 +8,7 @@
   <nav class="navbar">
     <ul class="navlist">
       <li>
-        <a (click)="toAbout()">About</a>
+        <a (click)="scrollToAbout()">About</a>
       </li>
     </ul>
   </nav>
@@ -30,7 +30,7 @@
       1500s, when an unknown printer took a galley of type and scrambled it to
       make a type specimen book.
     </p>
-    <button>Let's start</button>
+    <button (click)="scrollToDecks()">Let's start</button>
   </div>
   <img
     class="home-page-end-line"

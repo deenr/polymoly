@@ -14,7 +14,13 @@ import { Observable, Subject } from 'rxjs';
   encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent {
-  public toAbout() {
+  public scrollToDecks() {
+    document
+      .getElementById('card-decks')
+      ?.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  public scrollToAbout() {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
   }
 }
