@@ -128,5 +128,21 @@ body {
 
 .about {
   background-color: #501e9d;
-  height: calc((9 / 16) * 100vw);
+  padding: 148px 140px;
+
+  h1 {
+    font-family: "Furore";
+    font-size: 128px;
+
+    color: #fdef6d;
+
+    text-shadow: 4px 4px 24px #dc4ddd;
+  }
+
+  p {
+    font-family: "Andale Mono";
+    font-size: 24px;
+
+    color: #f5f5f5;
+  }
 }
