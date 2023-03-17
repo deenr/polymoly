@@ -1,11 +1,6 @@
-import {
-  Component,
-  ElementRef,
-  HostListener,
-  ViewChild,
-  ViewEncapsulation,
-} from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { Component, ViewEncapsulation } from '@angular/core';
+import { ChildrenOutletContexts, RouterOutlet } from '@angular/router';
+import { slideInAnimation } from './route-animations';
 
 @Component({
   selector: 'app-root',
@@ -14,13 +9,11 @@ import { Observable, Subject } from 'rxjs';
   encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent {
-  public scrollToDecks() {
-    document
-      .getElementById('card-decks')
-      ?.scrollIntoView({ behavior: 'smooth' });
-  }
+  constructor(private readonly contexts: ChildrenOutletContexts) {}
 
-  public scrollToAbout() {
-    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+  getRouteAnimationData() {
+    return this.contexts.getContext('primary')?.route?.snapshot?.data?.[
+      'animation'
+    ];
   }
 }

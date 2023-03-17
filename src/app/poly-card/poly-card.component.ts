@@ -19,6 +19,7 @@ import { Observable, Subscription } from 'rxjs';
 export class PolyCardComponent implements OnInit, OnDestroy {
   @ViewChild('card') card: ElementRef;
   @Input() requestCard: Observable<void>;
+  @Input() movableCard: boolean = false;
   @Output() isCardLoadingChange = new EventEmitter<boolean>();
   @Output() isCardFlippedChange = new EventEmitter<boolean>();
 
@@ -45,12 +46,14 @@ export class PolyCardComponent implements OnInit, OnDestroy {
 
   @HostListener('mousemove', ['$event'])
   onMouseMove(event: MouseEvent) {
-    this.mouseNotOnCard = false;
-    const { left, top } = this.card.nativeElement.getBoundingClientRect();
-    this.rotateX =
-      -(this.card.nativeElement.offsetWidth / 2 - (event.pageX - left)) / 20;
-    this.rotateY =
-      (this.card.nativeElement.offsetHeight / 2 - (event.pageY - top)) / 10;
+    if (this.movableCard) {
+      this.mouseNotOnCard = false;
+      const { left, top } = this.card.nativeElement.getBoundingClientRect();
+      this.rotateX =
+        -(this.card.nativeElement.offsetWidth / 2 - (event.pageX - left)) / 20;
+      this.rotateY =
+        (this.card.nativeElement.offsetHeight / 2 - (event.pageY - top)) / 10;
+    }
   }
 
   @HostListener('mouseleave', ['$event'])
