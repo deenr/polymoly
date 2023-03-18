@@ -9,6 +9,7 @@ import { DrawCardComponent } from './draw-card/draw-card.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { CurvedTextComponent } from './curved-text/curved-text.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { HomeComponent } from './home/home.component';
     ProgressButtonComponent,
     DrawCardComponent,
     HomeComponent,
+    CurvedTextComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,16 @@
+<svg
+  [ngStyle]="{
+    height: calculateHeight(),
+    width: calculateWidth(),
+    'margin-bottom': -fontSize
+  }"
+>
+  <defs>
+    <path #line id="line" d="M 0 300 A 800 800 0 0 1 800 300" />
+  </defs>
+  <text [ngStyle]="{ 'font-size': fontSize }">
+    <textPath startOffset="50%" xlink:href="#line">
+      {{ text }}
+    </textPath>
+  </text>
+</svg>

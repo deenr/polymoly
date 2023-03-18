@@ -19,7 +19,7 @@ import { Observable, Subscription } from 'rxjs';
 export class PolyCardComponent implements OnInit, OnDestroy {
   @ViewChild('card') card: ElementRef;
   @Input() requestCard: Observable<void>;
-  @Input() movableCard: boolean = false;
+  @Input() movableCard: boolean = true;
   @Output() isCardLoadingChange = new EventEmitter<boolean>();
   @Output() isCardFlippedChange = new EventEmitter<boolean>();
 

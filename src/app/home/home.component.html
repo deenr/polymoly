@@ -14,15 +14,7 @@
   </nav>
   <div class="elements">
     <div class="title-text">
-      <svg>
-        <path
-          id="curve"
-          d="m 100 158 C 100 158 218.33 128 455 128 C 681.67 128 810 158 810 158"
-        />
-        <text>
-          <textPath xlink:href="#curve">Polymoly</textPath>
-        </text>
-      </svg>
+      <app-curved-text text="Polymoly" [fontSize]="128"></app-curved-text>
     </div>
     <p>
       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -44,7 +36,6 @@
   />
 </section>
 <section id="card-decks" class="card-decks">
-  <app-draw-card></app-draw-card>
   <div class="title">
     <h2>Let's shuffle things up a bit!</h2>
     <h1>Choose your weapon of choice</h1>

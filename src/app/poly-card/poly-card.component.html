@@ -8,15 +8,7 @@
   <div #card class="card-content" [ngClass]="{ 'is-loading': isLoading }">
     <div class="card-face card-front">
       <div class="title-text">
-        <svg>
-          <path
-            id="curve"
-            d="m 30 56 C 30 56 81.5 36 142.5 36 C 203.5 36 255 56 255 56"
-          />
-          <text>
-            <textPath xlink:href="#curve">Polymoly</textPath>
-          </text>
-        </svg>
+        <app-curved-text text="Polymoly" [fontSize]="36"></app-curved-text>
       </div>
       <div class="illustration">
         <div class="eclipse"></div>

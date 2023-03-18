@@ -91,26 +91,17 @@
 }
 
 .title-text {
-  width: 255px;
-  height: 65px;
   margin-top: -35px;
-  margin-right: 35px;
-
   transform: translateZ(50px);
 
-  text {
+  ::ng-deep text {
     font-family: "Furore", sans-serif;
     fill: #fdef6d;
     font-size: 36px;
-    letter-spacing: 6px;
     text-shadow: 6px 6px 25px #fdef6e;
     border: 2px;
     stroke: #e8ec3a;
     stroke-width: 1px;
-  }
-
-  path {
-    fill: transparent;
   }
 }
 
