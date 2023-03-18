@@ -11,21 +11,6 @@
   transform: translateX(100%) rotateY(-180deg);
 }
 
-.card-content.is-loading {
-  .star {
-    animation: identifier 2s infinite ease-in-out;
-
-    @keyframes identifier {
-      from {
-        transform: rotate(0deg) translateZ(50px);
-      }
-      to {
-        transform: rotate(359deg) translateZ(50px);
-      }
-    }
-  }
-}
-
 .card-content {
   width: 620px;
   height: 360px;

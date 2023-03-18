@@ -5,8 +5,11 @@
     transform: 'rotateY(' + rotateX + 'deg) rotateX(' + rotateY + 'deg)'
   }"
 >
-  <div #card class="card-content" [ngClass]="{ 'is-loading': isLoading }">
-    <app-front-poly-card class="card-face"></app-front-poly-card>
+  <div #card class="card-content">
+    <app-front-poly-card
+      class="card-face"
+      [isLoading]="isLoading"
+    ></app-front-poly-card>
     <app-back-poly-card
       class="card-face card-back"
       [cardTitle]="cardTitle"

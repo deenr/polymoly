@@ -4,7 +4,12 @@
   </div>
   <div class="illustration">
     <div class="eclipse"></div>
-    <img class="star" src="../../../assets/star.svg" alt="Star" />
+    <img
+      class="star"
+      [ngClass]="{ 'is-loading': isLoading }"
+      src="../../../assets/star.svg"
+      alt="Star"
+    />
     <img class="polyman" src="../../../assets/poly-man.svg" alt="Polyman" />
   </div>
 </div>

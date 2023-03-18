@@ -16,6 +16,19 @@
     url("../../../assets/checkers.svg");
 }
 
+.is-loading {
+  animation: identifier 2s infinite ease-in-out;
+
+  @keyframes identifier {
+    from {
+      transform: rotate(0deg) translateZ(50px);
+    }
+    to {
+      transform: rotate(359deg) translateZ(50px);
+    }
+  }
+}
+
 .title-text {
   margin-top: -45px;
 
