@@ -7,13 +7,13 @@
   flex-direction: column;
   border-radius: 20px;
   box-shadow: 6px 6px 50px #935bdd;
-  background-position: center;
-  background-size: cover;
   background-image: linear-gradient(
       rgba(145, 88, 221, 0.97),
       rgba(145, 88, 221, 0.97)
     ),
     url("../../../assets/pattern.png");
+
+  background-size: 111%;
 }
 
 .is-loading {
