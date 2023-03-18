@@ -1,5 +1,23 @@
 @import url("https://fonts.cdnfonts.com/css/furore");
 
+.button {
+  background: #dc4ddd;
+  box-shadow: 4px 4px 24px #dc4ddd;
+  border: 0;
+  border-radius: 12px;
+  padding: 16px 32px;
+
+  font-family: "Furore", sans-serif;
+  font-size: 24px;
+
+  color: #fdef6d;
+  transition: 0.1s;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 .home {
   background-color: #501e9d;
   height: calc((9 / 16) * 100vw);
@@ -83,10 +101,9 @@
   }
 }
 
-.card-decks {
-  margin-top: -10px;
+.card-decks-section {
   background-color: #fdef6d;
-  height: calc((9 / 16) * 80vw);
+  height: calc((9 / 16) * 60vw);
   padding: 64px 148px;
 
   .title {
@@ -106,9 +123,33 @@
     }
   }
 }
-.decks {
+
+.card-decks-content {
   display: flex;
   flex-direction: column;
+}
+
+.card-decks {
+  z-index: 1;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  gap: 48px;
+
+  .deck {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+  }
+
+  .select-button {
+    color: #501e9d;
+  }
+}
+
+.draw-card {
+  margin-top: 40px;
 }
 
 .about {
@@ -135,7 +176,7 @@
     width: 100%;
     position: absolute;
     left: 0;
-    top: 2100px;
+    top: 1900px;
   }
 
   .blob {

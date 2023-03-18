@@ -9,10 +9,12 @@
   </div>
   <h1>Let's dance!</h1>
   <p>FLIP THE CARD</p>
-  <app-progress-button
-    [inProgress]="isCardLoading"
-    [buttonText]="getButtonText()"
-    (click)="requestCard()"
-  ></app-progress-button>
-  <button (click)="back()">Back</button>
+  <div class="action-buttons">
+    <button class="button" (click)="back()">Back</button>
+    <app-progress-button
+      [inProgress]="isCardLoading"
+      [buttonText]="getButtonText()"
+      (click)="requestCard()"
+    ></app-progress-button>
+  </div>
 </article>

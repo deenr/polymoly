@@ -38,6 +38,29 @@ body {
     animation: rotation 10s infinite linear;
   }
 }
+.button {
+  background: #dc4ddd;
+  box-shadow: 4px 4px 24px #dc4ddd;
+  border: 0;
+  border-radius: 12px;
+  padding: 16px 32px;
+
+  font-family: "Furore", sans-serif;
+  font-size: 24px;
+
+  color: #501e9d;
+  transition: 0.1s;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.action-buttons {
+  margin-top: 48px;
+  display: flex;
+  gap: 24px;
+}
 
 @keyframes rotation {
   from {

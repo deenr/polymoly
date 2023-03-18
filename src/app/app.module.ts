@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { CurvedTextComponent } from './curved-text/curved-text.component';
 import { FrontPolyCardComponent } from './poly-card/front-poly-card/front-poly-card.component';
 import { BackPolyCardComponent } from './poly-card/back-poly-card/back-poly-card.component';
+import { EmptyPolyCardComponent } from './poly-card/empty-poly-card/empty-poly-card.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { BackPolyCardComponent } from './poly-card/back-poly-card/back-poly-card
     CurvedTextComponent,
     FrontPolyCardComponent,
     BackPolyCardComponent,
+    EmptyPolyCardComponent,
   ],
   imports: [
     BrowserModule,

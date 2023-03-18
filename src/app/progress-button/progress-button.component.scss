@@ -1,11 +1,19 @@
 .button {
-  cursor: pointer;
-  background-color: #d54bd6;
-  font-size: 24px;
-  font-family: "Furore", sans-serif;
-  color: #501e9d;
+  background: #dc4ddd;
+  box-shadow: 4px 4px 24px #dc4ddd;
   border: 0;
-  padding: 10px 20px;
+  border-radius: 12px;
+  padding: 16px 32px;
+
+  font-family: "Furore", sans-serif;
+  font-size: 24px;
+
+  color: #501e9d;
+  transition: 0.1s;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 @keyframes button-loading-spinner {

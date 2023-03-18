@@ -20,7 +20,7 @@
       1500s, when an unknown printer took a galley of type and scrambled it to
       make a type specimen book.
     </p>
-    <button (click)="scrollToDecks()">Let's start</button>
+    <button class="button" (click)="scrollToDecks()">Let's start</button>
   </div>
   <img
     class="home-page-end-line"
@@ -33,18 +33,33 @@
     alt="home-page-end"
   />
 </section>
-<section id="card-decks" class="card-decks">
-  <div class="decks" *ngIf="isSelectingDeck; else drawCard">
+<section id="card-decks" class="card-decks-section">
+  <div class="card-decks-content" *ngIf="isSelectingDeck; else drawCard">
     <div class="title">
       <h2>Let's shuffle things up a bit!</h2>
       <h1>Choose your weapon of choice</h1>
     </div>
 
-    <app-front-poly-card></app-front-poly-card>
-    <button (click)="selectDeck()">Select</button>
+    <div class="card-decks">
+      <div class="deck">
+        <app-front-poly-card></app-front-poly-card>
+        <button class="button select-button" (click)="selectDeck()">
+          Select
+        </button>
+      </div>
+      <div class="deck">
+        <app-empty-poly-card></app-empty-poly-card>
+        <button class="button select-button" (click)="selectDeck()">
+          Select
+        </button>
+      </div>
+    </div>
   </div>
   <ng-template #drawCard>
-    <app-draw-card (returnToDeck)="returnToDeck()"></app-draw-card>
+    <app-draw-card
+      class="draw-card"
+      (returnToDeck)="returnToDeck()"
+    ></app-draw-card>
   </ng-template>
 </section>
 <section id="about" class="about">
