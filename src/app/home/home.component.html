@@ -34,13 +34,18 @@
   />
 </section>
 <section id="card-decks" class="card-decks">
-  <div class="title">
-    <h2>Let's shuffle things up a bit!</h2>
-    <h1>Choose your weapon of choice</h1>
-    <div class="decks">
-      <app-poly-card [movableCard]="false"></app-poly-card>
+  <div class="decks" *ngIf="isSelectingDeck; else drawCard">
+    <div class="title">
+      <h2>Let's shuffle things up a bit!</h2>
+      <h1>Choose your weapon of choice</h1>
     </div>
+
+    <app-front-poly-card></app-front-poly-card>
+    <button (click)="selectDeck()">Select</button>
   </div>
+  <ng-template #drawCard>
+    <app-draw-card (returnToDeck)="returnToDeck()"></app-draw-card>
+  </ng-template>
 </section>
 <section id="about" class="about">
   <img

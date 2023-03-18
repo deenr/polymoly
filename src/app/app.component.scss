@@ -129,6 +129,11 @@ body {
   }
 }
 
+.decks {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .about {
   background-color: #501e9d;
   padding: 148px 140px;

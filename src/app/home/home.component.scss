@@ -106,6 +106,10 @@
     }
   }
 }
+.decks {
+  display: flex;
+  flex-direction: column;
+}
 
 .about {
   background-color: #501e9d;

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
 
 @Component({
@@ -7,6 +7,7 @@ import { Subject, Observable } from 'rxjs';
   styleUrls: ['./draw-card.component.scss'],
 })
 export class DrawCardComponent {
+  @Output() returnToDeck = new EventEmitter<void>();
   requestNewCard = new Subject<void>();
   isCardLoading = false;
   isCardFlipped = false;
@@ -29,5 +30,9 @@ export class DrawCardComponent {
 
   getButtonText(): string {
     return this.isCardFlipped ? 'Play again' : 'Play';
+  }
+
+  back(): void {
+    this.returnToDeck.emit();
   }
 }
