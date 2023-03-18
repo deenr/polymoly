@@ -6,19 +6,11 @@
   }"
 >
   <div #card class="card-content" [ngClass]="{ 'is-loading': isLoading }">
-    <div class="card-face card-front">
-      <div class="title-text">
-        <app-curved-text text="Polymoly" [fontSize]="36"></app-curved-text>
-      </div>
-      <div class="illustration">
-        <div class="eclipse"></div>
-        <img class="star" src="../../assets/star.svg" alt="Star" />
-        <img class="polyman" src="../../assets/poly-man.svg" alt="Polyman" />
-      </div>
-    </div>
-    <div class="card-face card-back">
-      <h1>{{ cardTitle }}</h1>
-      <p>{{ cardDescription }}</p>
-    </div>
+    <app-front-poly-card class="card-face"></app-front-poly-card>
+    <app-back-poly-card
+      class="card-face card-back"
+      [cardTitle]="cardTitle"
+      [cardDescription]="cardDescription"
+    ></app-back-poly-card>
   </div>
 </div>

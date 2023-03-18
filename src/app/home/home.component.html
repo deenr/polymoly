@@ -13,9 +13,7 @@
     </ul>
   </nav>
   <div class="elements">
-    <div class="title-text">
-      <app-curved-text text="Polymoly" [fontSize]="128"></app-curved-text>
-    </div>
+    <h1>Polymoly</h1>
     <p>
       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
       Lorem Ipsum has been the industry's standard dummy text ever since the
@@ -40,7 +38,7 @@
     <h2>Let's shuffle things up a bit!</h2>
     <h1>Choose your weapon of choice</h1>
     <div class="decks">
-      <a routerLink="/play"><button>moveToCard</button></a>
+      <app-poly-card [movableCard]="false"></app-poly-card>
     </div>
   </div>
 </section>
@@ -63,4 +61,3 @@
     industry.
   </p>
 </section>
-<app-draw-card></app-draw-card>

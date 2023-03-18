@@ -10,6 +10,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { CurvedTextComponent } from './curved-text/curved-text.component';
+import { FrontPolyCardComponent } from './poly-card/front-poly-card/front-poly-card.component';
+import { BackPolyCardComponent } from './poly-card/back-poly-card/back-poly-card.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { CurvedTextComponent } from './curved-text/curved-text.component';
     DrawCardComponent,
     HomeComponent,
     CurvedTextComponent,
+    FrontPolyCardComponent,
+    BackPolyCardComponent,
   ],
   imports: [
     BrowserModule,
