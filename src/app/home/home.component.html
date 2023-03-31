@@ -1,10 +1,14 @@
 <section id="home" class="home">
-  <!-- <img class="blob" src="../assets/blob-home.svg" alt="blob-homepage" />
   <img
-    class="home-page-top-line"
+    class="home__top-blob"
+    src="../assets/blob-home.svg"
+    alt="blob-homepage"
+  />
+  <img
+    class="home__top-line"
     src="../assets/home-page-top-line.svg"
     alt="blob-homepage"
-  /> -->
+  />
   <nav class="navbar">
     <ul>
       <li>
@@ -24,19 +28,19 @@
       Let's start
     </button>
   </div>
-  <!-- <img
-    class="home-page-end-line"
+  <img
+    class="home__end-line"
     src="../assets/home-page-end-line.svg"
     alt="home-page-end-line"
   />
   <img
-    class="home-page-end-blob"
+    class="home__end-blob"
     src="../assets/home-page-end.svg"
     alt="home-page-end"
-  /> -->
+  />
 </section>
 <section id="card-decks" class="card-decks">
-  <div *ngIf="isSelectingDeck; else drawCard">
+  <div *ngIf="false; else drawCard">
     <h4 class="content__slogan">Let's shuffle things up a bit!</h4>
     <h3 class="content__choose-title">Choose your weapon of choice</h3>
 
@@ -64,11 +68,11 @@
   </ng-template>
 </section>
 <section id="about" class="about">
-  <!-- <img
-    class="about-page-start-blob"
+  <img
+    class="about__start-blob"
     src="../assets/about-page-start.svg"
     alt="about-page-start"
-  /> -->
+  />
   <h2 class="about__title">About</h2>
   <p class="about__text">
     Lorem Ipsum is simply dummy text of the printing and typesetting industry.

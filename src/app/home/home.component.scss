@@ -89,15 +89,64 @@ p {
   }
 }
 
+.home {
+  position: relative;
+
+  &__top-blob {
+    max-width: 100%;
+    position: absolute;
+    left: -20%;
+    top: -60%;
+    z-index: -1;
+
+    @media (max-width: 960px) {
+      top: -40%;
+    }
+
+    @media (max-width: 680px) {
+      top: -30%;
+    }
+  }
+
+  &__top-line {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 320px;
+
+    @media (max-width: 960px) {
+      width: 240px;
+    }
+
+    @media (max-width: 680px) {
+      width: 176px;
+    }
+  }
+
+  &__end-blob {
+    position: absolute;
+    bottom: -1px !important;
+    left: 0;
+    width: 100%;
+  }
+
+  &__end-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+}
+
 .introduction {
-  padding: 196px 0;
+  padding: 196px 0 320px 0;
 
   @media (max-width: 960px) {
-    padding: 160px 0;
+    padding: 160px 0 240px 0;
   }
 
   @media (max-width: 680px) {
-    padding: 134px 0;
+    padding: 134px 0 200px 0;
   }
 
   display: flex;
@@ -133,16 +182,21 @@ p {
   }
 }
 
+.home__end-blob {
+  position: absolute;
+  bottom: 0;
+}
+
 .card-decks {
   background-color: #fdef6d;
-  padding: 64px 144px;
+  padding: 80px 144px 0 144px;
 
   @media (max-width: 960px) {
-    padding: 56px 112px;
+    padding: 64px 112px 0 112px;
   }
 
   @media (max-width: 680px) {
-    padding: 40px 72px;
+    padding: 72px 72px 0 72px;
   }
 }
 
@@ -185,11 +239,19 @@ p {
 
   @media (max-width: 960px) {
     scale: 0.9;
+    margin-top: -40px;
   }
 
   @media (max-width: 680px) {
     margin-top: -160px;
+    margin-bottom: -96px;
     scale: 0.7;
+  }
+
+  @media (max-width: 480px) {
+    margin-top: -260px;
+    margin-bottom: -200px;
+    scale: 0.5;
   }
 }
 
@@ -200,6 +262,8 @@ p {
 
   &__select {
     margin: 0 96px;
+    position: relative;
+    z-index: 1;
 
     &--unavailable {
       background-color: #8d55d6;
@@ -213,14 +277,23 @@ p {
 }
 
 .about {
-  padding: 64px 144px;
+  padding: 240px 144px 144px 144px;
+  position: relative;
+  background-color: #501e9d;
+
+  &__start-blob {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 100%;
+  }
 
   @media (max-width: 960px) {
-    padding: 56px 112px;
+    padding: 160px 112px 112px 112px;
   }
 
   @media (max-width: 680px) {
-    padding: 40px 72px;
+    padding: 120px 72px 72px 72px;
   }
 
   &__title {
