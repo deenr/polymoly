@@ -1,6 +1,41 @@
-@import url("https://fonts.cdnfonts.com/css/furore");
+h1 {
+  font-family: "Furore", sans-serif;
+  color: #fdef6d;
+  font-size: 128px;
+  letter-spacing: 6px;
+  border: 2px;
+  stroke: #e8ec3a;
+  stroke-width: 1px;
+  -webkit-text-shadow: 6px 6px 24px #dc4ddd;
+  text-shadow: 6px 6px 24px #dc4ddd;
+}
 
-.button {
+h2 {
+  font-family: "Furore", sans-serif;
+  font-size: 128px;
+  text-shadow: 4px 4px 24px #dc4ddd;
+  color: #fdef6d;
+}
+
+h3 {
+  font-size: 48px;
+  color: #d54bd6;
+  text-shadow: 4px 4px 24px #d54bd6;
+}
+
+h4 {
+  font-family: Andale Mono, AndaleMono, monospace;
+  font-size: 24px;
+}
+
+p {
+  font-family: Andale Mono, AndaleMono, monospace;
+  font-size: 24px;
+  text-align: center;
+  color: #f5f5f5;
+}
+
+.primary-button {
   background: #dc4ddd;
   box-shadow: 4px 4px 24px #dc4ddd;
   border: 0;
@@ -18,170 +53,100 @@
   }
 }
 
-.home {
-  background-color: #501e9d;
-  height: calc((9 / 16) * 100vw);
+.navbar {
+  position: absolute;
+  right: 3.5rem;
+  top: 3.5rem;
 
-  .blob {
-    position: absolute;
-    left: -300px;
-    top: -400px;
+  ul {
+    list-style-type: none;
+    margin: 0;
   }
 
-  .home-page-top-line {
-    position: absolute;
-    top: 0;
-    right: 0;
-    filter: drop-shadow(6px 6px 25px #e8ec3a);
-  }
-
-  .navbar {
-    display: flex;
-    justify-content: end;
-    align-items: start;
-    margin-top: 56px;
-    position: relative;
-    z-index: 1;
-
-    ul {
-      list-style-type: none;
-      margin: 0;
-    }
-
-    a {
-      margin-right: 56px;
-      font-size: 32px;
-      color: #fdef6d;
-      cursor: pointer;
-    }
-  }
-
-  .elements {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-
-    h1 {
-      font-family: "Furore", sans-serif;
-      color: #fdef6d;
-      font-size: 128px;
-      letter-spacing: 6px;
-      border: 2px;
-      stroke: #e8ec3a;
-      stroke-width: 1px;
-      -webkit-text-shadow: 6px 6px 24px #dc4ddd;
-      text-shadow: 6px 6px 24px #dc4ddd;
-      margin-top: 0;
-    }
-
-    p {
-      font-family: Andale Mono, AndaleMono, monospace;
-      font-size: 24px;
-      text-align: center;
-      color: #f5f5f5;
-      max-width: 900px;
-      margin-top: 0;
-      margin-bottom: 96px;
-    }
-  }
-
-  .home-page-end-line {
-    width: 100%;
-    position: absolute;
-    top: 550px;
-    filter: drop-shadow(6px 6px 25px #e8ec3a);
-  }
-
-  .home-page-end-blob {
-    width: 100%;
-    position: absolute;
-    top: 575px;
+  a {
+    font-size: 32px;
+    color: #fdef6d;
+    cursor: pointer;
   }
 }
 
-.card-decks-section {
-  background-color: #fdef6d;
-  height: calc((9 / 16) * 60vw);
-  padding: 64px 148px;
+.introduction {
+  padding: 13rem 0;
 
-  .title {
-    position: relative;
-    z-index: 1;
-    h2 {
-      font-family: Andale Mono, AndaleMono, monospace;
-      font-size: 24px;
-    }
-
-    h1 {
-      font-size: 48px;
-
-      color: #d54bd6;
-
-      text-shadow: 4px 4px 24px #d54bd6;
-    }
-  }
-}
-
-.card-decks-content {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.introduction__title {
+  margin: 0;
+}
+
+.introduction__text {
+  max-width: 880px;
+  margin: 0;
 }
 
 .card-decks {
-  z-index: 1;
-  height: fit-content;
+  background-color: #fdef6d;
+  padding: 64px 144px;
+}
+
+.content__slogan {
+  margin-top: 0px;
+  margin-bottom: 16px;
+}
+
+.content__choose-title {
+  margin-top: 0px;
+  margin-bottom: 72px;
+}
+
+.decks {
   display: flex;
-  flex-direction: row;
-  gap: 48px;
+  justify-content: space-between;
+}
 
-  .deck {
+@media (max-width: 1560px) {
+  .decks {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 48px;
-  }
-
-  .select-button {
-    color: #501e9d;
+    flex-direction: column;
+    gap: 72px;
   }
 }
 
-.draw-card {
-  margin-top: 40px;
+.deck {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.deck__select {
+  margin: 0 96px;
+}
+
+.deck__select--unavailable {
+  background-color: #8d55d6;
+  box-shadow: 4px 4px 24px #8d55d6;
+
+  &:hover {
+    cursor: default;
+  }
 }
 
 .about {
-  background-color: #501e9d;
-  padding: 148px 140px;
+  padding: 64px 144px;
+}
 
-  h1 {
-    position: relative;
-    z-index: 1;
+.about__title {
+  margin: 0;
+  margin-bottom: 56px;
+}
 
-    font-family: "Furore", sans-serif;
-    font-size: 128px;
-    text-shadow: 4px 4px 24px #dc4ddd;
-    color: #fdef6d;
-  }
-
-  p {
-    font-family: "Andale Mono", sans-serif;
-    font-size: 24px;
-    color: #f5f5f5;
-  }
-
-  .about-page-start-blob {
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 1900px;
-  }
-
-  .blob {
-    position: absolute;
-    right: 0px;
-    top: 2200px;
-  }
+.about__text {
+  margin: 0;
+  max-width: 880px;
+  text-align: left;
 }
