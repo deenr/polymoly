@@ -1,75 +1,80 @@
 <section id="home" class="home">
-  <img class="blob" src="../assets/blob-home.svg" alt="blob-homepage" />
   <img
-    class="home-page-top-line"
+    class="home__top-blob"
+    src="../assets/blob-home.svg"
+    alt="blob-homepage"
+  />
+  <img
+    class="home__top-line"
     src="../assets/home-page-top-line.svg"
     alt="blob-homepage"
   />
   <nav class="navbar">
-    <ul class="navlist">
+    <ul>
       <li>
         <a (click)="scrollToAbout()">About</a>
       </li>
     </ul>
   </nav>
-  <div class="elements">
-    <h1>Polymoly</h1>
-    <p>
+  <div class="introduction">
+    <h1 class="introduction__title">Polymoly</h1>
+    <p class="introduction__text">
       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
       Lorem Ipsum has been the industry's standard dummy text ever since the
       1500s, when an unknown printer took a galley of type and scrambled it to
       make a type specimen book.
     </p>
-    <button class="button" (click)="scrollToDecks()">Let's start</button>
+    <button class="primary-button" (click)="scrollToDecks()">
+      Let's start
+    </button>
   </div>
   <img
-    class="home-page-end-line"
+    class="home__end-line"
     src="../assets/home-page-end-line.svg"
     alt="home-page-end-line"
   />
   <img
-    class="home-page-end-blob"
+    class="home__end-blob"
     src="../assets/home-page-end.svg"
     alt="home-page-end"
   />
 </section>
-<section id="card-decks" class="card-decks-section">
-  <div class="card-decks-content" *ngIf="isSelectingDeck; else drawCard">
-    <div class="title">
-      <h2>Let's shuffle things up a bit!</h2>
-      <h1>Choose your weapon of choice</h1>
-    </div>
+<section id="card-decks" class="card-decks">
+  <div *ngIf="false; else drawCard">
+    <h4 class="content__slogan">Let's shuffle things up a bit!</h4>
+    <h3 class="content__choose-title">Choose your weapon of choice</h3>
 
-    <div class="card-decks">
+    <div class="decks">
       <div class="deck">
         <app-front-poly-card></app-front-poly-card>
-        <button class="button select-button" (click)="selectDeck()">
+        <button class="primary-button deck__select" (click)="selectDeck()">
           Select
         </button>
       </div>
       <div class="deck">
         <app-empty-poly-card></app-empty-poly-card>
-        <button class="button select-button" (click)="selectDeck()">
+        <button
+          class="primary-button deck__select deck__select--unavailable"
+          (click)="selectDeck()"
+          disabled
+        >
           Unavailable
         </button>
       </div>
     </div>
   </div>
   <ng-template #drawCard>
-    <app-draw-card
-      class="draw-card"
-      (returnToDeck)="returnToDeck()"
-    ></app-draw-card>
+    <app-draw-card (returnToDeck)="returnToDeck()"></app-draw-card>
   </ng-template>
 </section>
 <section id="about" class="about">
   <img
-    class="about-page-start-blob"
+    class="about__start-blob"
     src="../assets/about-page-start.svg"
     alt="about-page-start"
   />
-  <h1>About</h1>
-  <p>
+  <h2 class="about__title">About</h2>
+  <p class="about__text">
     Lorem Ipsum is simply dummy text of the printing and typesetting industry.
     Lorem Ipsum has been the industry's standard dummy text ever since the
     1500s, when an unknown printer took a galley of type and scrambled it to

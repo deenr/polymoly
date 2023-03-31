@@ -1,6 +1,41 @@
-@import url("https://fonts.cdnfonts.com/css/furore");
+h1 {
+  font-family: "Furore", sans-serif;
+  color: #fdef6d;
+  font-size: 128px;
+  letter-spacing: 6px;
+  border: 2px;
+  stroke: #e8ec3a;
+  stroke-width: 1px;
+  -webkit-text-shadow: 6px 6px 24px #dc4ddd;
+  text-shadow: 6px 6px 24px #dc4ddd;
+}
 
-.button {
+h2 {
+  font-family: "Furore", sans-serif;
+  font-size: 128px;
+  text-shadow: 4px 4px 24px #dc4ddd;
+  color: #fdef6d;
+}
+
+h3 {
+  font-size: 48px;
+  color: #d54bd6;
+  text-shadow: 4px 4px 24px #d54bd6;
+}
+
+h4 {
+  font-family: Andale Mono, AndaleMono, monospace;
+  font-size: 24px;
+}
+
+p {
+  font-family: Andale Mono, AndaleMono, monospace;
+  font-size: 24px;
+  text-align: center;
+  color: #f5f5f5;
+}
+
+.primary-button {
   background: #dc4ddd;
   box-shadow: 4px 4px 24px #dc4ddd;
   border: 0;
@@ -18,170 +53,294 @@
   }
 }
 
-.home {
-  background-color: #501e9d;
-  height: calc((9 / 16) * 100vw);
+.navbar {
+  position: absolute;
+  right: 56px;
+  top: 56px;
 
-  .blob {
-    position: absolute;
-    left: -300px;
-    top: -400px;
+  @media (max-width: 960px) {
+    right: 32px;
+    top: 32px;
   }
 
-  .home-page-top-line {
+  @media (max-width: 680px) {
+    right: 24px;
+    top: 24px;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+  }
+
+  a {
+    font-size: 32px;
+
+    @media (max-width: 960px) {
+      font-size: 24px;
+    }
+
+    @media (max-width: 680px) {
+      top: 16;
+    }
+
+    color: #fdef6d;
+    cursor: pointer;
+  }
+}
+
+.home {
+  position: relative;
+
+  &__top-blob {
+    max-width: 100%;
+    position: absolute;
+    left: -20%;
+    top: -60%;
+    z-index: -1;
+
+    @media (max-width: 960px) {
+      top: -40%;
+    }
+
+    @media (max-width: 680px) {
+      top: -30%;
+    }
+  }
+
+  &__top-line {
     position: absolute;
     top: 0;
     right: 0;
-    filter: drop-shadow(6px 6px 25px #e8ec3a);
-  }
+    width: 320px;
 
-  .navbar {
-    display: flex;
-    justify-content: end;
-    align-items: start;
-    margin-top: 56px;
-    position: relative;
-    z-index: 1;
-
-    ul {
-      list-style-type: none;
-      margin: 0;
+    @media (max-width: 960px) {
+      width: 240px;
     }
 
-    a {
-      margin-right: 56px;
-      font-size: 32px;
-      color: #fdef6d;
-      cursor: pointer;
+    @media (max-width: 680px) {
+      width: 176px;
     }
   }
 
-  .elements {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-
-    h1 {
-      font-family: "Furore", sans-serif;
-      color: #fdef6d;
-      font-size: 128px;
-      letter-spacing: 6px;
-      border: 2px;
-      stroke: #e8ec3a;
-      stroke-width: 1px;
-      -webkit-text-shadow: 6px 6px 24px #dc4ddd;
-      text-shadow: 6px 6px 24px #dc4ddd;
-      margin-top: 0;
-    }
-
-    p {
-      font-family: Andale Mono, AndaleMono, monospace;
-      font-size: 24px;
-      text-align: center;
-      color: #f5f5f5;
-      max-width: 900px;
-      margin-top: 0;
-      margin-bottom: 96px;
-    }
-  }
-
-  .home-page-end-line {
-    width: 100%;
+  &__end-blob {
     position: absolute;
-    top: 550px;
-    filter: drop-shadow(6px 6px 25px #e8ec3a);
+    bottom: -1px !important;
+    left: 0;
+    width: 100%;
   }
 
-  .home-page-end-blob {
-    width: 100%;
+  &__end-line {
     position: absolute;
-    top: 575px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
   }
 }
 
-.card-decks-section {
-  background-color: #fdef6d;
-  height: calc((9 / 16) * 60vw);
-  padding: 64px 148px;
+.introduction {
+  padding: 196px 0 320px 0;
 
-  .title {
-    position: relative;
-    z-index: 1;
-    h2 {
-      font-family: Andale Mono, AndaleMono, monospace;
-      font-size: 24px;
-    }
-
-    h1 {
-      font-size: 48px;
-
-      color: #d54bd6;
-
-      text-shadow: 4px 4px 24px #d54bd6;
-    }
+  @media (max-width: 960px) {
+    padding: 160px 0 240px 0;
   }
-}
 
-.card-decks-content {
+  @media (max-width: 680px) {
+    padding: 134px 0 200px 0;
+  }
+
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 48px;
+
+  &__title {
+    margin: 0;
+
+    @media (max-width: 960px) {
+      font-size: 96px;
+    }
+
+    @media (max-width: 680px) {
+      font-size: 56px;
+    }
+  }
+
+  &__text {
+    max-width: 880px;
+    margin: 0;
+
+    @media (max-width: 960px) {
+      font-size: 16px;
+      max-width: 640px;
+    }
+
+    @media (max-width: 680px) {
+      font-size: 12px;
+      padding: 0 56px;
+    }
+  }
+}
+
+.home__end-blob {
+  position: absolute;
+  bottom: 0;
 }
 
 .card-decks {
-  z-index: 1;
-  height: fit-content;
+  background-color: #fdef6d;
+  padding: 80px 144px 0 144px;
+
+  @media (max-width: 960px) {
+    padding: 64px 112px 0 112px;
+
+    ::ng-deep .card-container {
+      scale: 0.9;
+    }
+
+    ::ng-deep h1 {
+      margin-top: 24px;
+    }
+  }
+
+  @media (max-width: 680px) {
+    padding: 72px 72px 0 72px;
+
+    ::ng-deep .card-container {
+      scale: 0.7;
+      margin-top: -48px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    ::ng-deep .card-container {
+      scale: 0.5;
+      margin-top: -120px;
+    }
+  }
+}
+
+.content__slogan {
+  margin-top: 0px;
+  margin-bottom: 16px;
+
+  @media (max-width: 960px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 680px) {
+    font-size: 16px;
+  }
+}
+
+.content__choose-title {
+  margin-top: 0px;
+  margin-bottom: 72px;
+
+  @media (max-width: 960px) {
+    font-size: 40px;
+  }
+
+  @media (max-width: 680px) {
+    font-size: 32px;
+  }
+}
+
+.decks {
   display: flex;
-  flex-direction: row;
-  gap: 48px;
+  justify-content: space-between;
 
-  .deck {
+  @media (max-width: 1560px) {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 48px;
+    flex-direction: column;
+    gap: 72px;
   }
 
-  .select-button {
-    color: #501e9d;
+  @media (max-width: 960px) {
+    scale: 0.9;
+    margin-top: -40px;
+  }
+
+  @media (max-width: 680px) {
+    margin-top: -160px;
+    margin-bottom: -96px;
+    scale: 0.7;
+  }
+
+  @media (max-width: 480px) {
+    margin-top: -260px;
+    margin-bottom: -200px;
+    scale: 0.5;
   }
 }
 
-.draw-card {
-  margin-top: 40px;
-}
+.deck {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 
-.about {
-  background-color: #501e9d;
-  padding: 148px 140px;
-
-  h1 {
+  &__select {
+    margin: 0 96px;
     position: relative;
     z-index: 1;
 
-    font-family: "Furore", sans-serif;
-    font-size: 128px;
-    text-shadow: 4px 4px 24px #dc4ddd;
-    color: #fdef6d;
-  }
+    &--unavailable {
+      background-color: #8d55d6;
+      box-shadow: 4px 4px 24px #8d55d6;
 
-  p {
-    font-family: "Andale Mono", sans-serif;
-    font-size: 24px;
-    color: #f5f5f5;
+      &:hover {
+        cursor: default;
+      }
+    }
   }
+}
 
-  .about-page-start-blob {
-    width: 100%;
+.about {
+  padding: 240px 144px 144px 144px;
+  position: relative;
+  background-color: #501e9d;
+
+  &__start-blob {
     position: absolute;
+    top: -1px;
     left: 0;
-    top: 1900px;
+    width: 100%;
   }
 
-  .blob {
-    position: absolute;
-    right: 0px;
-    top: 2200px;
+  @media (max-width: 960px) {
+    padding: 160px 112px 112px 112px;
+  }
+
+  @media (max-width: 680px) {
+    padding: 120px 72px 72px 72px;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 56px;
+
+    @media (max-width: 960px) {
+      font-size: 96px;
+    }
+
+    @media (max-width: 680px) {
+      font-size: 56px;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    max-width: 880px;
+    text-align: left;
+
+    @media (max-width: 960px) {
+      font-size: 16px;
+      max-width: 640px;
+    }
+
+    @media (max-width: 680px) {
+      font-size: 12px;
+    }
   }
 }
