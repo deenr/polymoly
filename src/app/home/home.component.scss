@@ -193,10 +193,30 @@ p {
 
   @media (max-width: 960px) {
     padding: 64px 112px 0 112px;
+
+    ::ng-deep .card-container {
+      scale: 0.9;
+    }
+
+    ::ng-deep h1 {
+      margin-top: 24px;
+    }
   }
 
   @media (max-width: 680px) {
     padding: 72px 72px 0 72px;
+
+    ::ng-deep .card-container {
+      scale: 0.7;
+      margin-top: -48px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    ::ng-deep .card-container {
+      scale: 0.5;
+      margin-top: -120px;
+    }
   }
 }
 
