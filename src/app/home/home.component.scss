@@ -55,8 +55,18 @@ p {
 
 .navbar {
   position: absolute;
-  right: 3.5rem;
-  top: 3.5rem;
+  right: 56px;
+  top: 56px;
+
+  @media (max-width: 960px) {
+    right: 32px;
+    top: 32px;
+  }
+
+  @media (max-width: 680px) {
+    right: 24px;
+    top: 24px;
+  }
 
   ul {
     list-style-type: none;
@@ -65,55 +75,121 @@ p {
 
   a {
     font-size: 32px;
+
+    @media (max-width: 960px) {
+      font-size: 24px;
+    }
+
+    @media (max-width: 680px) {
+      top: 16;
+    }
+
     color: #fdef6d;
     cursor: pointer;
   }
 }
 
 .introduction {
-  padding: 13rem 0;
+  padding: 196px 0;
+
+  @media (max-width: 960px) {
+    padding: 160px 0;
+  }
+
+  @media (max-width: 680px) {
+    padding: 134px 0;
+  }
 
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 48px;
-}
 
-.introduction__title {
-  margin: 0;
-}
+  &__title {
+    margin: 0;
 
-.introduction__text {
-  max-width: 880px;
-  margin: 0;
+    @media (max-width: 960px) {
+      font-size: 96px;
+    }
+
+    @media (max-width: 680px) {
+      font-size: 56px;
+    }
+  }
+
+  &__text {
+    max-width: 880px;
+    margin: 0;
+
+    @media (max-width: 960px) {
+      font-size: 16px;
+      max-width: 640px;
+    }
+
+    @media (max-width: 680px) {
+      font-size: 12px;
+      padding: 0 56px;
+    }
+  }
 }
 
 .card-decks {
   background-color: #fdef6d;
   padding: 64px 144px;
+
+  @media (max-width: 960px) {
+    padding: 56px 112px;
+  }
+
+  @media (max-width: 680px) {
+    padding: 40px 72px;
+  }
 }
 
 .content__slogan {
   margin-top: 0px;
   margin-bottom: 16px;
+
+  @media (max-width: 960px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 680px) {
+    font-size: 16px;
+  }
 }
 
 .content__choose-title {
   margin-top: 0px;
   margin-bottom: 72px;
+
+  @media (max-width: 960px) {
+    font-size: 40px;
+  }
+
+  @media (max-width: 680px) {
+    font-size: 32px;
+  }
 }
 
 .decks {
   display: flex;
   justify-content: space-between;
-}
 
-@media (max-width: 1560px) {
-  .decks {
+  @media (max-width: 1560px) {
     display: flex;
     align-items: center;
     flex-direction: column;
     gap: 72px;
+  }
+
+  @media (max-width: 960px) {
+    scale: 0.9;
+  }
+
+  @media (max-width: 680px) {
+    margin-top: -160px;
+    scale: 0.7;
   }
 }
 
@@ -121,32 +197,57 @@ p {
   display: flex;
   flex-direction: column;
   gap: 40px;
-}
 
-.deck__select {
-  margin: 0 96px;
-}
+  &__select {
+    margin: 0 96px;
 
-.deck__select--unavailable {
-  background-color: #8d55d6;
-  box-shadow: 4px 4px 24px #8d55d6;
+    &--unavailable {
+      background-color: #8d55d6;
+      box-shadow: 4px 4px 24px #8d55d6;
 
-  &:hover {
-    cursor: default;
+      &:hover {
+        cursor: default;
+      }
+    }
   }
 }
 
 .about {
   padding: 64px 144px;
-}
 
-.about__title {
-  margin: 0;
-  margin-bottom: 56px;
-}
+  @media (max-width: 960px) {
+    padding: 56px 112px;
+  }
 
-.about__text {
-  margin: 0;
-  max-width: 880px;
-  text-align: left;
+  @media (max-width: 680px) {
+    padding: 40px 72px;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 56px;
+
+    @media (max-width: 960px) {
+      font-size: 96px;
+    }
+
+    @media (max-width: 680px) {
+      font-size: 56px;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    max-width: 880px;
+    text-align: left;
+
+    @media (max-width: 960px) {
+      font-size: 16px;
+      max-width: 640px;
+    }
+
+    @media (max-width: 680px) {
+      font-size: 12px;
+    }
+  }
 }
