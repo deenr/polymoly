@@ -1,20 +1,10 @@
-import {
-  Component,
-  ElementRef,
-  EventEmitter,
-  HostListener,
-  Input,
-  OnDestroy,
-  OnInit,
-  Output,
-  ViewChild,
-} from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, Input, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-poly-card',
   templateUrl: './poly-card.component.html',
-  styleUrls: ['./poly-card.component.scss'],
+  styleUrls: ['./poly-card.component.scss']
 })
 export class PolyCardComponent implements OnInit, OnDestroy {
   @ViewChild('card') card: ElementRef;
@@ -23,17 +13,12 @@ export class PolyCardComponent implements OnInit, OnDestroy {
   @Output() isCardLoadingChange = new EventEmitter<boolean>();
   @Output() isCardFlippedChange = new EventEmitter<boolean>();
 
-  cardTitles = [
-    'You are lucky',
-    'You are unlucky',
-    'Hell yeah!',
-    'Can I do it?',
-  ];
+  cardTitles = ['You are lucky', 'You are unlucky', 'Hell yeah!', 'Can I do it?'];
   cardDescriptions = [
     'Move to vacation and do your holiday dance!',
     'Go to jail and drop the soap!',
     'You decided to move to New York and throw a big house party. Give the bank $300',
-    'Do a handstand and try to take a shot',
+    'Do a handstand and try to take a shot'
   ];
   cardTitle: string;
   cardDescription: string;
@@ -49,10 +34,8 @@ export class PolyCardComponent implements OnInit, OnDestroy {
     if (this.movableCard) {
       this.mouseNotOnCard = false;
       const { left, top } = this.card.nativeElement.getBoundingClientRect();
-      this.rotateX =
-        -(this.card.nativeElement.offsetWidth / 2 - (event.pageX - left)) / 20;
-      this.rotateY =
-        (this.card.nativeElement.offsetHeight / 2 - (event.pageY - top)) / 10;
+      this.rotateX = -(this.card.nativeElement.offsetWidth / 2 - (event.pageX - left)) / 20;
+      this.rotateY = (this.card.nativeElement.offsetHeight / 2 - (event.pageY - top)) / 10;
     }
   }
 

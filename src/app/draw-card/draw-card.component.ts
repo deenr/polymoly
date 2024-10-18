@@ -4,7 +4,7 @@ import { Subject, Observable } from 'rxjs';
 @Component({
   selector: 'app-draw-card',
   templateUrl: './draw-card.component.html',
-  styleUrls: ['./draw-card.component.scss'],
+  styleUrls: ['./draw-card.component.scss']
 })
 export class DrawCardComponent {
   @Output() returnToDeck = new EventEmitter<void>();

@@ -8,9 +8,8 @@ describe('BackPolyCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BackPolyCardComponent ]
-    })
-    .compileComponents();
+      declarations: [BackPolyCardComponent]
+    }).compileComponents();
 
     fixture = TestBed.createComponent(BackPolyCardComponent);
     component = fixture.componentInstance;

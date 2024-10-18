@@ -10,15 +10,11 @@
   box-shadow: 6px 6px 50px #935bdd;
   background-position: center;
   background-size: cover;
-  background-image: linear-gradient(
-      rgba(145, 88, 221, 0.97),
-      rgba(145, 88, 221, 0.97)
-    ),
-    url("../../../assets/checkers.svg");
+  background-image: linear-gradient(rgba(145, 88, 221, 0.97), rgba(145, 88, 221, 0.97)), url('../../../assets/checkers.svg');
 
   h1 {
     font-size: 36px;
-    font-family: "Furore", sans-serif;
+    font-family: 'Furore', sans-serif;
     color: #fdef6d;
     -webkit-text-stroke: 1px #e8ec3a;
     text-shadow: 6px 6px 25px #fdef6e;
@@ -28,7 +24,7 @@
 
   p {
     font-size: 24px;
-    font-family: "Furore", sans-serif;
+    font-family: 'Furore', sans-serif;
     color: #fdef6d;
     max-width: 400px;
   }

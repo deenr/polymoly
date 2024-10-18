@@ -6,14 +6,7 @@
   }"
 >
   <div #card class="card-content">
-    <app-front-poly-card
-      class="card-face"
-      [isLoading]="isLoading"
-    ></app-front-poly-card>
-    <app-back-poly-card
-      class="card-face card-back"
-      [cardTitle]="cardTitle"
-      [cardDescription]="cardDescription"
-    ></app-back-poly-card>
+    <app-front-poly-card class="card-face" [isLoading]="isLoading"></app-front-poly-card>
+    <app-back-poly-card class="card-face card-back" [cardTitle]="cardTitle" [cardDescription]="cardDescription"></app-back-poly-card>
   </div>
 </div>

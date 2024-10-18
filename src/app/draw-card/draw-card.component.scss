@@ -1,4 +1,4 @@
-@import url("https://fonts.cdnfonts.com/css/furore");
+@import url('https://fonts.cdnfonts.com/css/furore');
 
 body {
   background-color: #fdef6d;
@@ -21,7 +21,10 @@ body {
 
   p {
     color: black;
-    font-family: Andale Mono, AndaleMono, monospace;
+    font-family:
+      Andale Mono,
+      AndaleMono,
+      monospace;
   }
 }
 
@@ -47,7 +50,7 @@ body {
   border-radius: 12px;
   padding: 16px 32px;
 
-  font-family: "Furore", sans-serif;
+  font-family: 'Furore', sans-serif;
   font-size: 24px;
 
   color: #501e9d;

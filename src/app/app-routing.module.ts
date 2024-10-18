@@ -8,12 +8,12 @@ const routes: Routes = [
   {
     path: 'play',
     component: DrawCardComponent,
-    data: { animation: 'DrawCardPage' },
-  },
+    data: { animation: 'DrawCardPage' }
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class AppRoutingModule {}

@@ -1,14 +1,6 @@
 <section id="home" class="home">
-  <img
-    class="home__top-blob"
-    src="../assets/blob-home.svg"
-    alt="blob-homepage"
-  />
-  <img
-    class="home__top-line"
-    src="../assets/home-page-top-line.svg"
-    alt="blob-homepage"
-  />
+  <img class="home__top-blob" src="../assets/blob-home.svg" alt="blob-homepage" />
+  <img class="home__top-line" src="../assets/home-page-top-line.svg" alt="blob-homepage" />
   <nav class="navbar">
     <ul>
       <li>
@@ -19,25 +11,13 @@
   <div class="introduction">
     <h1 class="introduction__title">Polymoly</h1>
     <p class="introduction__text">
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-      Lorem Ipsum has been the industry's standard dummy text ever since the
-      1500s, when an unknown printer took a galley of type and scrambled it to
-      make a type specimen book.
+      Polymoly elevates your Monopoly experience with AI-generated challenges. Choose between the classic 'Normal' deck or the '+18' version for a fun twist. No shuffling, no missing cards—just click
+      and get a fresh challenge every time!
     </p>
-    <button class="primary-button" (click)="scrollToDecks()">
-      Let's start
-    </button>
+    <button class="primary-button" (click)="scrollToDecks()">Let's start</button>
   </div>
-  <img
-    class="home__end-line"
-    src="../assets/home-page-end-line.svg"
-    alt="home-page-end-line"
-  />
-  <img
-    class="home__end-blob"
-    src="../assets/home-page-end.svg"
-    alt="home-page-end"
-  />
+  <img class="home__end-line" src="../assets/home-page-end-line.svg" alt="home-page-end-line" />
+  <img class="home__end-blob" src="../assets/home-page-end.svg" alt="home-page-end" />
 </section>
 <section id="card-decks" class="card-decks">
   <div *ngIf="isSelectingDeck; else drawCard">
@@ -47,19 +27,11 @@
     <div class="decks">
       <div class="deck">
         <app-front-poly-card></app-front-poly-card>
-        <button class="primary-button deck__select" (click)="selectDeck()">
-          Select
-        </button>
+        <button class="primary-button deck__select" (click)="selectDeck()">Select</button>
       </div>
       <div class="deck">
         <app-empty-poly-card></app-empty-poly-card>
-        <button
-          class="primary-button deck__select deck__select--unavailable"
-          (click)="selectDeck()"
-          disabled
-        >
-          Unavailable
-        </button>
+        <button class="primary-button deck__select deck__select--unavailable" (click)="selectDeck()" disabled>Unavailable</button>
       </div>
     </div>
   </div>
@@ -68,21 +40,12 @@
   </ng-template>
 </section>
 <section id="about" class="about">
-  <img
-    class="about__start-blob"
-    src="../assets/about-page-start.svg"
-    alt="about-page-start"
-  />
+  <img class="about__start-blob" src="../assets/about-page-start.svg" alt="about-page-start" />
   <h2 class="about__title">About</h2>
   <p class="about__text">
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    Lorem Ipsum has been the industry's standard dummy text ever since the
-    1500s, when an unknown printer took a galley of type and scrambled it to
-    make a type specimen book. <br /><br />Lorem Ipsum is simply dummy text of
-    the printing and typesetting industry. Lorem Ipsum has been the industry's
-    standard dummy text ever since the 1500s, when an unknown printer took a
-    galley of type and scrambled it to make a type specimen book.
-    <br /><br />Lorem Ipsum is simply dummy text of the printing and typesetting
-    industry.
+    Polymoly is designed for those who want to enhance their Monopoly experience without the hassle. We aim to create a seamless, engaging experience by using AI to generate unique tasks for every
+    game. From standard Monopoly challenges to more creative tasks, Polymoly’s mission is to make the game more fun, dynamic, and accessible.<br /><br />With no need to sign up or log in, users can
+    instantly select their preferred deck and jump straight into the action. Polymoly brings endless possibilities to every round, adapting to your preferences with every click. Let the AI create the
+    challenge while you focus on winning!
   </p>
 </section>

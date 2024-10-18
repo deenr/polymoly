@@ -24,16 +24,10 @@ import { EmptyPolyCardComponent } from './poly-card/empty-poly-card/empty-poly-c
     CurvedTextComponent,
     FrontPolyCardComponent,
     BackPolyCardComponent,
-    EmptyPolyCardComponent,
+    EmptyPolyCardComponent
   ],
-  imports: [
-    BrowserModule,
-    MatButtonModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    RouterModule,
-  ],
+  imports: [BrowserModule, MatButtonModule, AppRoutingModule, BrowserAnimationsModule, RouterModule],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

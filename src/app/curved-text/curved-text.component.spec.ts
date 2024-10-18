@@ -8,9 +8,8 @@ describe('CurvedTextComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CurvedTextComponent ]
-    })
-    .compileComponents();
+      declarations: [CurvedTextComponent]
+    }).compileComponents();
 
     fixture = TestBed.createComponent(CurvedTextComponent);
     component = fixture.componentInstance;
