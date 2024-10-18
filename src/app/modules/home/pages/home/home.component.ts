@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   isSelectingDeck = true;
+  isExplicit = false;
 
   public scrollToDecks() {
     document.getElementById('card-decks')?.scrollIntoView({ behavior: 'smooth' });
@@ -16,8 +17,10 @@ export class HomeComponent {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
   }
 
-  public selectDeck(): void {
+  public selectDeck(isExplicit = false): void {
     this.isSelectingDeck = false;
+    this.isExplicit = isExplicit;
+    this.scrollToDecks();
   }
 
   public returnToDeck(): void {

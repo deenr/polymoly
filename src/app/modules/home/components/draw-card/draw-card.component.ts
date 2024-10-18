@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { ChangeDetectorRef, Component, EventEmitter, Input, Output } from '@angular/core';
+import { finalize, Observable, Subject, take } from 'rxjs';
+import { DrawCardSerice } from './draw-card.service';
 
 @Component({
   selector: 'app-draw-card',
@@ -7,26 +8,38 @@ import { Observable, Subject } from 'rxjs';
   styleUrls: ['./draw-card.component.scss']
 })
 export class DrawCardComponent {
+  @Input() public isExplicit: boolean;
   @Output() returnToDeck = new EventEmitter<void>();
   requestNewCard = new Subject<void>();
   isCardLoading = false;
   isCardFlipped = false;
 
-  requestCard(): void {
-    console.log('hi');
-    this.requestNewCard.next();
+  title = '';
+  description = '';
+
+  public constructor(private readonly drawCardService: DrawCardSerice, private readonly changeDetector: ChangeDetectorRef) {}
+
+  public requestCard(): void {
+    this.isCardLoading = true;
+    this.isCardFlipped = false;
+
+    this.drawCardService
+      .requestCard(this.isExplicit)
+      .pipe(
+        take(1),
+        finalize(() => {
+          this.isCardLoading = false;
+          this.isCardFlipped = true;
+        })
+      )
+      .subscribe(({ title, description }) => {
+        this.title = title;
+        this.description = description;
+      });
   }
 
   getRequestCard(): Observable<void> {
     return this.requestNewCard.asObservable();
-  }
-
-  isCardLoadingChange(isCardLoading: boolean): void {
-    this.isCardLoading = isCardLoading;
-  }
-
-  isCardFlippedChange(isCardFlipped: boolean): void {
-    this.isCardFlipped = isCardFlipped;
   }
 
   getButtonText(): string {

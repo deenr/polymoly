@@ -1,7 +1,11 @@
 export const environment = {
   production: false,
-  supabaseUrl: 'https://gplfthdwvjresasuuqdr.supabase.co',
-  supabaseKey:
+  SUPABASE_URL: 'https://gplfthdwvjresasuuqdr.supabase.co',
+  SUPABASE_KEY:
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdwbGZ0aGR3dmpyZXNhc3V1cWRyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjkyMTQ2MjEsImV4cCI6MjA0NDc5MDYyMX0.kBDTvVQKrMntnMN7us8H3H3PQu7cczOXp_oX5DwMyRc',
-  geminiApiKey: 'AIzaSyD0TXU9Qz9UCKK9I_H0MPAtWKIxAo-pF3A'
+  GEMINI_API_KEY: 'AIzaSyD0TXU9Qz9UCKK9I_H0MPAtWKIxAo-pF3A',
+  NORMAL_CARD_PROMPT:
+    'Generate a JSON object with a title and description property for a family-friendly Monopoly challenge card. The title should be short, catchy and understandable for children, while the description should describe a playful task or challenge related to Monopoly or real-life activities. Avoid any inappropriate content. Make the task lighthearted, simple, and something anyone could enjoy. Examples of previous challenge cards: Title: You are lucky Description: Move to vacation and do your holiday dance! Title: Can I do it? Description: Go to the nearest player’s property and claim one of their properties! Please provide a new JSON object based on these examples but without the ```json ``` part.',
+  EXPLICIT_CARD_PROMPT:
+    'Create a JSON object with a title and description property for a Monopoly challenge card intended for players aged 16+. The title should be bold and catchy, while the description should describe a Monopoly-related task with a playful, suggestive twist. The challenges should involve daring or humorous tasks, but remain within the context of Monopoly gameplay. { "title": "Risqué Roll", "description": "Every time you roll doubles, the player to your right must perform a dare of your choosing. Keep it playful and suggestive, but avoid anything too explicit."}, or  { "title": "Do you dare?", "description": "The player that owns plot X needs to do his best dance move"}, or  { "title": "Upside down", "description": "Take a shot while standing on your head, once you finish you get $100 from the bank."}, or  { "title": "Spin the bottle", "description": "Spin the bottle and give a certain compliment to the person in front of you are pay that person 100$"} The content should be suggestive and playful, appropriate for a mature audience, but avoid explicit sexual content or violence. Please provide a new JSON object based on this example, ensuring it adheres to the guidelines, passes any safety checks, and offers more variety in the challenge options. Consider using phrases like "do this, otherwise this", "do this, get that", "the person that owns certain plot needs to", etc.'
 };

@@ -143,6 +143,11 @@
       padding: 0 56px;
     }
   }
+
+  .button__decks {
+    position: relative;
+    z-index: 999;
+  }
 }
 
 .home__end-blob {
@@ -248,13 +253,9 @@
     position: relative;
     z-index: 1;
 
-    &--unavailable {
+    &--explicit {
       background-color: #8d55d6;
       box-shadow: 4px 4px 24px #8d55d6;
-
-      &:hover {
-        cursor: default;
-      }
     }
   }
 }

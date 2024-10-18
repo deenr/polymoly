@@ -1,10 +1,13 @@
-<div class="card-front">
+<div class="card-front" [class.explicit]="isExplicit">
   <div class="title-text">
     <app-curved-text text="Polymoly"></app-curved-text>
   </div>
   <div class="illustration">
     <div class="eclipse"></div>
-    <img class="star" [ngClass]="{ 'is-loading': isLoading }" src="../../../assets/star.svg" alt="Star" />
-    <img class="polyman" src="../../../assets/poly-man.svg" alt="Polyman" />
+    <img *ngIf="!isExplicit" class="star" [ngClass]="{ 'is-loading': isLoading }" src="../../../assets/star.svg" alt="Star" />
+    <img *ngIf="isExplicit" class="hexagon" [ngClass]="{ 'is-loading': isLoading }" src="../../../assets/hexagon.svg" alt="hexagon" />
+    <img class="polyman" [class.explicit]="isExplicit" src="../../../assets/poly-man.svg" alt="Polyman" />
+    <p *ngIf="isExplicit" class="explicit">Explicit<br />Content</p>
   </div>
+  <p *ngIf="isExplicit" class="sixteen-plus">+16</p>
 </div>

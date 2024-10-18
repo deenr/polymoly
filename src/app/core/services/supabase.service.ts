@@ -1,40 +1,53 @@
 import { Injectable } from '@angular/core';
-import { AuthSession, createClient, SupabaseClient } from '@supabase/supabase-js';
-import { Observable } from 'rxjs';
-import { environment } from '../../../environments/environment';
+import { environment } from '@environments/environment';
+import { createClient, SupabaseClient } from '@supabase/supabase-js';
+import { from, Observable, of } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SupabaseService {
   private supabase: SupabaseClient;
-  _session: AuthSession | null = null;
 
   constructor() {
-    this.supabase = createClient(environment.supabaseUrl, environment.supabaseKey);
+    this.supabase = createClient(environment.SUPABASE_URL, environment.SUPABASE_KEY, {});
   }
 
-  getNormalCards() {
-    return this.supabase.from('card').select('id, title, description').eq('explicit_content', false).select();
+  public getCards(explicit: boolean): Observable<Array<{ id: string; title: string; description: string }>> {
+    return from(this.supabase.from('cards').select('id, title, description').eq('explicit_content', explicit)).pipe(
+      map(({ data, error }) => {
+        if (error) throw error;
+        return data as Array<{ id: string; title: string; description: string }>;
+      }),
+      catchError((error) => {
+        console.error('Error fetching normal cards:', error);
+        return of([]);
+      })
+    );
   }
 
-  public addCard({ title, description, explicitContent }: { title: string; description: string; explicitContent: boolean }): Observable<string> {
-    return new Observable<string>((observer) => {
+  public addCard({ title, description, explicitContent }: { title: string; description: string; explicitContent: boolean }): Observable<{ id: string; title: string; description: string }> {
+    return from(
       this.supabase
-        .from('')
+        .from('cards')
         .upsert({
           title,
           description,
           explicit_content: explicitContent
         })
-        .then((response) => {
-          if (response.error) {
-            observer.error(response.error);
-          } else {
-            observer.next();
-            observer.complete();
-          }
-        });
-    });
+        .select('id, title, description')
+        .single()
+    ).pipe(
+      map(({ data, error }) => {
+        if (error) {
+          throw error;
+        }
+        if (!data) {
+          throw new Error('No data returned from insert operation');
+        }
+        return { ...data };
+      })
+    );
   }
 }

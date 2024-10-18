@@ -1,12 +1,6 @@
-<div
-  class="card"
-  [ngClass]="{ 'card-transition': mouseNotOnCard }"
-  [ngStyle]="{
-    transform: 'rotateY(' + rotateX + 'deg) rotateX(' + rotateY + 'deg)'
-  }"
->
-  <div #card class="card-content">
-    <app-front-poly-card class="card-face" [isLoading]="isLoading"></app-front-poly-card>
-    <app-back-poly-card class="card-face card-back" [cardTitle]="cardTitle" [cardDescription]="cardDescription"></app-back-poly-card>
+<div class="card">
+  <div class="card-content" [class.is-flipped]="isFlipped">
+    <app-front-poly-card class="card-face" [isExplicit]="isExplicit" [isLoading]="isLoading"></app-front-poly-card>
+    <app-back-poly-card class="card-face card-back" [cardTitle]="title" [cardDescription]="description"></app-back-poly-card>
   </div>
 </div>

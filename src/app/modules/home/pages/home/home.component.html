@@ -14,7 +14,7 @@
       Polymoly elevates your Monopoly experience with AI-generated challenges. Choose between the classic 'Normal' deck or the '+18' version for a fun twist. No shuffling, no missing cards—just click
       and get a fresh challenge every time!
     </p>
-    <button class="primary-button" (click)="scrollToDecks()">Let's start</button>
+    <button class="primary-button button__decks" (click)="scrollToDecks()">Let's start</button>
   </div>
   <img class="home__end-line" src="../assets/home-page-end-line.svg" alt="home-page-end-line" />
   <img class="home__end-blob" src="../assets/home-page-end.svg" alt="home-page-end" />
@@ -30,13 +30,13 @@
         <button class="primary-button deck__select" (click)="selectDeck()">Select</button>
       </div>
       <div class="deck">
-        <app-empty-poly-card></app-empty-poly-card>
-        <button class="primary-button deck__select deck__select--unavailable" (click)="selectDeck()" disabled>Unavailable</button>
+        <app-front-poly-card [isExplicit]="true"></app-front-poly-card>
+        <button class="primary-button deck__select deck__select--explicit" (click)="selectDeck(true)">Select</button>
       </div>
     </div>
   </div>
   <ng-template #drawCard>
-    <app-draw-card (returnToDeck)="returnToDeck()"></app-draw-card>
+    <app-draw-card [isExplicit]="isExplicit" (returnToDeck)="returnToDeck()"></app-draw-card>
   </ng-template>
 </section>
 <section id="about" class="about">

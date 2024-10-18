@@ -1,9 +1,9 @@
 <article class="homepage">
   <div class="card-container">
-    <app-poly-card [requestCard]="getRequestCard()" (isCardLoadingChange)="isCardLoadingChange($event)" (isCardFlippedChange)="isCardFlippedChange($event)"></app-poly-card>
+    <app-poly-card [isExplicit]="isExplicit" [isFlipped]="isCardFlipped" [isLoading]="isCardLoading" [title]="title" [description]="description"></app-poly-card>
     <img class="globe" src="../assets/globe.png" alt="" />
   </div>
-  <h1>Let's dance!</h1>
+  <h1>Let's play!</h1>
   <p>FLIP THE CARD</p>
   <div class="action-buttons">
     <button class="button" (click)="back()">Back</button>

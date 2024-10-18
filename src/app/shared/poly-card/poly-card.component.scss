@@ -9,6 +9,11 @@
 
 .card-content.is-flipped {
   transform: translateX(100%) rotateY(-180deg);
+
+  ::ng-deep .polyman,
+  ::ng-deep p.explicit {
+    z-index: unset !important;
+  }
 }
 
 .card-content {
