@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { Subject, Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-draw-card',
@@ -13,6 +13,7 @@ export class DrawCardComponent {
   isCardFlipped = false;
 
   requestCard(): void {
+    console.log('hi');
     this.requestNewCard.next();
   }
 

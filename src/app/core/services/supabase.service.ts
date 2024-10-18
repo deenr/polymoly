@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { AuthChangeEvent, AuthSession, createClient, Session, SupabaseClient, User } from '@supabase/supabase-js';
-import { environment } from '../../../environments/environment';
+import { AuthSession, createClient, SupabaseClient } from '@supabase/supabase-js';
 import { Observable } from 'rxjs';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class SupabaseService {
     this.supabase = createClient(environment.supabaseUrl, environment.supabaseKey);
   }
 
-  getNormalCards(user: User) {
+  getNormalCards() {
     return this.supabase.from('card').select('id, title, description').eq('explicit_content', false).select();
   }
 

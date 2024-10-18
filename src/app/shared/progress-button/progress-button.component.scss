@@ -14,6 +14,11 @@
   &:hover {
     cursor: pointer;
   }
+
+  &:has(.spinner) {
+    pointer-events: none !important;
+    cursor: default;
+  }
 }
 
 @keyframes button-loading-spinner {

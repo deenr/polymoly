@@ -1,9 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular/core';
 
 @Component({
+  standalone: true,
   selector: 'app-curved-text',
   templateUrl: './curved-text.component.html',
-  styleUrls: ['./curved-text.component.scss']
+  styleUrls: ['./curved-text.component.scss'],
+  imports: [CommonModule]
 })
 export class CurvedTextComponent implements AfterViewInit {
   @ViewChild('line') line: ElementRef;

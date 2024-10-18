@@ -7,9 +7,9 @@
   flex-direction: column;
   border-radius: 20px;
   box-shadow: 6px 6px 50px #935bdd;
-  background-position: center;
-  background-size: cover;
-  background-image: linear-gradient(rgba(220, 77, 221, 0.97), rgba(220, 77, 221, 0.97)), url('../../../assets/checkers.svg');
+  background-image: linear-gradient(rgba(145, 88, 221, 0.97), rgba(145, 88, 221, 0.97)), url('../../../../assets/pattern.png');
+
+  background-size: 111%;
 }
 
 .is-loading {
@@ -51,18 +51,19 @@
   height: 100%;
   background-color: #50bedc;
   border-radius: 50%;
-  outline: 2px solid #dc4ddd;
+  outline: 2px solid #9747ff;
   outline-offset: -8px;
 }
 
-.star {
+.hexagon {
   grid-area: 1/1;
   margin: auto;
   filter: drop-shadow(6px 6px 25px #e8ec3a);
 }
 
-.polyman {
+.question-mark {
   z-index: 1;
   grid-area: 1/1;
   margin: auto;
+  scale: 0.5;
 }
