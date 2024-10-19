@@ -13,22 +13,21 @@ body {
   height: 100%;
 
   h1 {
+    margin-top: -32px;
     font-size: 36px;
-    margin-top: 100px;
     margin-bottom: 0;
+    text-align: center;
     color: #501e9d;
   }
 
   p {
     color: black;
-    font-family:
-      Andale Mono,
-      AndaleMono,
-      monospace;
+    font-family: Andale Mono, AndaleMono, monospace;
   }
 }
 
 .card-container {
+  margin-top: 64px;
   display: grid;
   align-items: center;
 
@@ -43,6 +42,7 @@ body {
     animation: rotation 10s infinite linear;
   }
 }
+
 .button {
   background: #dc4ddd;
   box-shadow: 4px 4px 24px #dc4ddd;
@@ -64,9 +64,13 @@ body {
 .action-buttons {
   position: relative;
   z-index: 1;
-  margin-top: 48px;
+  margin-top: 72px;
   display: flex;
   gap: 24px;
+
+  @media (max-width: 480px) {
+    margin-top: 0px;
+  }
 }
 
 @keyframes rotation {

@@ -139,8 +139,8 @@
     }
 
     @media (max-width: 680px) {
-      font-size: 12px;
-      padding: 0 56px;
+      font-size: 14px;
+      padding: 0 24px;
     }
   }
 
@@ -157,7 +157,7 @@
 
 .card-decks {
   background-color: #fdef6d;
-  padding: 80px 144px 0 144px;
+  padding: 48px 144px 0 144px;
 
   @media (max-width: 960px) {
     padding: 64px 112px 0 112px;
@@ -176,14 +176,14 @@
 
     ::ng-deep .card-container {
       scale: 0.7;
-      margin-top: -48px;
+      margin-top: -24px;
     }
   }
 
   @media (max-width: 480px) {
     ::ng-deep .card-container {
       scale: 0.5;
-      margin-top: -120px;
+      margin-top: -64px;
     }
   }
 }
@@ -273,11 +273,11 @@
   }
 
   @media (max-width: 960px) {
-    padding: 160px 112px 112px 112px;
+    padding: 160px 64px 240px 64px;
   }
 
   @media (max-width: 680px) {
-    padding: 120px 72px 72px 72px;
+    padding: 134px 24px 200px 24px;
   }
 
   &__title {

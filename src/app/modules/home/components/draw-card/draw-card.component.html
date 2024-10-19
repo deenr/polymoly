@@ -1,10 +1,10 @@
 <article class="homepage">
+  <h1>Let's play!</h1>
+  <p>FLIP THE CARD</p>
   <div class="card-container">
     <app-poly-card [isExplicit]="isExplicit" [isFlipped]="isCardFlipped" [isLoading]="isCardLoading" [title]="title" [description]="description"></app-poly-card>
     <img class="globe" src="../assets/globe.png" alt="" />
   </div>
-  <h1>Let's play!</h1>
-  <p>FLIP THE CARD</p>
   <div class="action-buttons">
     <button class="button" (click)="back()">Back</button>
     <app-progress-button [inProgress]="isCardLoading" [buttonText]="getButtonText()" (click)="requestCard()"></app-progress-button>
